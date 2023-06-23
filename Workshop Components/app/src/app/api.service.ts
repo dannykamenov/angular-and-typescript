@@ -13,6 +13,6 @@ export class ApiService {
   }
 
   loadPosts() {
-    return this.httpClient.get('https://localhost:3000/api/posts?limit=5')
+    return this.httpClient.get('http://localhost:3000/api/posts?limit=5')
   }
 }
