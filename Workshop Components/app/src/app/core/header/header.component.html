@@ -6,10 +6,20 @@
         <div class="mini-navbar" *ngIf="!isLogged">
             <ul>
                 <li>
-                    <a href="#">Login</a>
+                    <a routerLink="/login">Login</a>
                 </li>
                 <li>
                     <a href="#">Register</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mini-navbar" *ngIf="isLogged">
+            <ul>
+                <li>
+                    <a href="#">John's Profile</a>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
                 </li>
             </ul>
         </div>
