@@ -3,7 +3,7 @@
         <div class="logo-wrap">
             <p class="logo"><span class="logo">SoftUni Forum</span></p>
         </div>
-        <div class="mini-navbar" *ngIf="!isLogged">
+        <div class="mini-navbar" *ngIf="!isLoggedIn">
             <ul>
                 <li>
                     <a routerLink="/auth/login">Login</a>
@@ -13,13 +13,13 @@
                 </li>
             </ul>
         </div>
-        <div class="mini-navbar" *ngIf="isLogged">
+        <div class="mini-navbar" *ngIf="isLoggedIn">
             <ul>
                 <li>
-                    <a href="#">John's Profile</a>
+                    <a routerLink="/auth/profile">{{user?.firstName}}'s Profile</a>
                 </li>
                 <li>
-                    <a href="#">Logout</a>
+                    <a routerLink="/auth/logout">Logout</a>
                 </li>
             </ul>
         </div>
