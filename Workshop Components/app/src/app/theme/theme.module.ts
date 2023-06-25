@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeDetailsComponent } from './theme-details/theme-details.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { RecentPostsComponent } from './recent-posts/recent-posts.component';
   imports: [
     CommonModule,
     SharedModule,
-    ThemeRoutingModule
+    ThemeRoutingModule,
+    RouterModule
   ], exports: [
     ThemeListComponent,
     RecentPostsComponent,

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, DoCheck } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -7,14 +6,21 @@ import { AuthService } from '../../auth/auth.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
-  get isLoggedIn() {
-    return this.authService.isLoggedIn;
+export class MainComponent implements DoCheck {
+
+  // get isLoggedIn() {
+  //   return this.authService.isLoggedIn;
+  // }
+
+  isLoggedIn = false;
+
+
+  constructor(private authService: AuthService) {
+
   }
 
-  get user() {
-    return this.authService.user;
+  ngDoCheck(): void {
+    this.isLoggedIn = this.authService.isLoggedIn;
   }
 
-  constructor(private authService: AuthService, private router: Router) {}
 }
