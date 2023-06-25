@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,13 +9,18 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  constructor(private router: Router, private authService: AuthService) {
-    this.authService.user = {
-      username: 'John'
-    } as any;
+  constructor(private activatedRoute: ActivatedRoute ,private router: Router, private authService: AuthService) {
   }
 
   loginHandler(): void {
-  }
+    this.authService.user = {
+      username: 'John'
+    } as any;
 
+    const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+
+    this.router.navigate([returnUrl]);
+  }
+  // loginHandler uses the ActivatedRoute service to get the returnUrl query parameter and if it is not available, it uses the root path. Then it navigates to the returnUrl.
+  // Upon login user will be redirected to his original Url
 }

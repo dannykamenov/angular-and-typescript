@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-theme-details',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./theme-details.component.scss']
 })
 export class ThemeDetailsComponent {
-
+  constructor(private activatedRoute: ActivatedRoute) { 
+    
+  }
 }

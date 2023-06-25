@@ -17,4 +17,8 @@ export class ApiService {
   loadPosts() {
     return this.httpClient.get<IPost[]>('http://localhost:3000/api/posts?limit=5')
   }
+
+  loadTheme(id: string) {
+    return this.httpClient.get<ITheme>(`http://localhost:3000/api/themes/${id}`)
+  }
 }
