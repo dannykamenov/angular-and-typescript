@@ -14,7 +14,7 @@ export class LoginComponent {
       firstName: 'John',
       lastName: 'Doe',
     }
-    //this.router.navigate(['/'])
+    this.router.navigate(['/'])
   }
 
 }
