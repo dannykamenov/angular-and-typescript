@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
   constructor(private activatedRoute: ActivatedRoute ,private router: Router, private authService: AuthService) {
   }
 
-  loginHandler(): void {
+  loginHandler(form: NgForm): void {
     this.authService.user = {
       username: 'John'
     } as any;
