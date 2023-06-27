@@ -1,9 +1,9 @@
 import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Validator, ValidationErrors, AbstractControl, ValidatorFn, NG_VALIDATORS } from '@angular/forms';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { appEmailValidator } from './app-email-validator';
 
 @Directive({
-  selector: '[appAppEmail]',
+  selector: '[appEmail]',
   providers: [
     {
       provide: NG_VALIDATORS,
@@ -12,24 +12,21 @@ import { appEmailValidator } from './app-email-validator';
     }
   ]
 })
-export class AppEmailDirective implements Validator, OnChanges{
+export class AppEmailDirective implements OnChanges, Validator {
 
-  @Input() appAppEmail: string[] = [];
+  @Input() appEmail: string[] = [];
 
   validator: ValidatorFn = () => null;
 
-  constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    const appEmailChange = changes['appAppEmail'];
-    if(appEmailChange){
-      this.validate = appEmailValidator(appEmailChange.currentValue);
+    const appEmailChange = changes['appEmail'];
+    if (appEmailChange) {
+      this.validator = appEmailValidator(appEmailChange.currentValue);
     }
-    
   }
 
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
     return this.validator(control);
   }
+
 }
