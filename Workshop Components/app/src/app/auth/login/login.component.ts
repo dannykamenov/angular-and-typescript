@@ -10,6 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
 
+  // to access form we use @ViewChild and the # sign is used to get the reference of the form
+
   constructor(private activatedRoute: ActivatedRoute ,private router: Router, private authService: AuthService) {
   }
 
