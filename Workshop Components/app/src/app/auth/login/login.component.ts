@@ -21,13 +21,13 @@ export class LoginComponent {
   loginHandler(form: NgForm): void {
 
     if (form.invalid) { return; } 
-/*     this.authService.user = {
+    this.authService.user = {
       username: 'John'
     } as any;
 
     const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
 
-    this.router.navigate([returnUrl]);*/
+    this.router.navigate([returnUrl]);
   } 
   // loginHandler uses the ActivatedRoute service to get the returnUrl query parameter and if it is not available, it uses the root path. Then it navigates to the returnUrl.
   // Upon login user will be redirected to his original Url
