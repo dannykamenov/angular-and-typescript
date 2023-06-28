@@ -11,7 +11,7 @@ import { matchPasswordGroup, appEmailValidator } from 'src/app/shared/validators
 export class RegisterComponent {
 
   form = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(3)]],
+    username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, appEmailValidator(appEmailDomains)]],
     ext: ['00359'],
     tel: [],
@@ -24,4 +24,7 @@ export class RegisterComponent {
   });
 
   constructor(private fb: FormBuilder) {}
+
+  registerHandler(): void {
+  }
 }
