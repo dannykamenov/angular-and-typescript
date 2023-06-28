@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { NgForm } from '@angular/forms';
+import { appEmailDomains } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  appEmailDomains = appEmailDomains;
 
   // to access form we use @ViewChild and the # sign is used to get the reference of the form
 
