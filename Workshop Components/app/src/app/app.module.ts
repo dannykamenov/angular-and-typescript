@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { ThemeModule } from './theme/theme.module';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 
 
@@ -17,6 +18,7 @@ import { appInterceptorProvider } from './app.interceptor';
   declarations: [
     AppComponent,
     MainComponent,
+    AuthenticateComponent,
   ],
   imports: [
     AuthModule,

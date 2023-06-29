@@ -22,4 +22,8 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http.post<any>('http://localhost:3000/api/login', { email, password });
   }
+
+  getProfile() {
+    return this.http.get<IUser>('http://localhost:3000/api/users/profile');
+  }
 }
