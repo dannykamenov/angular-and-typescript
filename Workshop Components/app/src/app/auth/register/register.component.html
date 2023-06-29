@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="register" [formGroup]="form" (ngSubmit)="registerHandler">
+    <form class="register" [formGroup]="form" (ngSubmit)="registerHandler()">
 
         <fieldset>
             <h2>Registration Form</h2>
@@ -60,7 +60,7 @@
                     *ngIf="form.get('pass')?.errors?.['passwordMismatch'] && form.get('pass')?.get('rePassword')?.touched">
                     Repeat Password does not match password!</p>
             </ng-container>
-            <button [disabled]="form.invalid">Create Account</button>
+            <button>Create Account</button>
 
             <p class="text-center">
                 Have an account?
