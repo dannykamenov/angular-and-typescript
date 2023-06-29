@@ -9,6 +9,7 @@ import { MainComponent } from './theme/main/main.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { ThemeModule } from './theme/theme.module';
+import { appInterceptorProvider } from './app.interceptor';
 
 
 
@@ -27,7 +28,9 @@ import { ThemeModule } from './theme/theme.module';
     SharedModule,
   
   ],
-  providers: [],
+  providers: [
+    appInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
