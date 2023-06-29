@@ -68,6 +68,7 @@ function login(req, res, next) {
             }
             res.status(200)
                 .send(user);
+            console.log(user, token)
         })
         .catch(next);
 }

@@ -16,14 +16,14 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   register(username: string, email: string, password: string, rePassword: string, tel?: string) {
-    return this.http.post<IUser>('http://localhost:3000/api/register', { username, email, password, rePassword, tel });
+    return this.http.post<IUser>('/api/register', { username, email, password, rePassword, tel });
   }
 
   login(email: string, password: string) {
-    return this.http.post<any>('http://localhost:3000/api/login', { email, password });
+    return this.http.post<any>('/api/login', { email, password });
   }
 
   getProfile() {
-    return this.http.get<IUser>('http://localhost:3000/api/users/profile');
+    return this.http.get<IUser>('/api/users/profile')
   }
 }
