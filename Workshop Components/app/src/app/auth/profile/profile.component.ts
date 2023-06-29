@@ -69,7 +69,7 @@ get addresssesArray() {
 
   saveProfile(): void {
     this.formSubmitted = true;
-    if (this.form.invalid) { return; }
+    /* if (this.form.invalid) { return; } */
     const { username, email, ext, tel } = this.form.value;
     this.authService.user = {
       username, email, tel: ext + ' ' + tel
