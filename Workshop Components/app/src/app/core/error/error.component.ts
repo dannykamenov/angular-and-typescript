@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { API_ERROR } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-error',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent {
+
+  apiError$ = this.apiError.asObservable();
+
+  constructor(@Inject(API_ERROR) private apiError: BehaviorSubject<Error | null>, ) { }
 
 }

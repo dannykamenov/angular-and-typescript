@@ -11,6 +11,8 @@ import { AuthModule } from './auth/auth.module';
 import { ThemeModule } from './theme/theme.module';
 import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { API_ERROR } from './shared/constants';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -31,7 +33,11 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
   
   ],
   providers: [
-    appInterceptorProvider
+    appInterceptorProvider,
+    {
+      provide: API_ERROR,
+      useValue: new BehaviorSubject(null)
+    }
   ],
   bootstrap: [AppComponent]
 })
