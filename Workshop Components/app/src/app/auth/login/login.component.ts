@@ -26,7 +26,6 @@ export class LoginComponent {
     const { email, password } = form.value;
     this.authService.login(email!, password!)
       .subscribe(user => {
-        this.authService.user = user; 
         this.router.navigate(['/theme/list']);
       });
 

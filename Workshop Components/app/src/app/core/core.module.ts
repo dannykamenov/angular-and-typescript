@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -13,7 +14,8 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ]
 })
 export class CoreModule { }
