@@ -6,10 +6,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthActivate } from '../shared/guards/auth.activate';
 
 const routes: Routes = [
-    {path: 'auth/login', component: LoginComponent, canActivate: [AuthActivate],data: {title: 'Login', loginRequired: false}},
-    {path: 'auth/register', component: RegisterComponent, canActivate: [AuthActivate], data: {title: 'Register', loginRequired: false}},
-    {path: 'auth/logout', component: LogoutComponent, canActivate: [AuthActivate], data: {title: 'Logout', loginRequired: true}},
-    {path: 'auth/profile', component: ProfileComponent, canActivate: [AuthActivate], data: {title: 'Profile', loginRequired: true}}
+    {path: 'login', component: LoginComponent, canActivate: [AuthActivate],data: {title: 'Login', loginRequired: false}},
+    {path: 'register', component: RegisterComponent, canActivate: [AuthActivate], data: {title: 'Register', loginRequired: false}},
+    {path: 'logout', component: LogoutComponent, canActivate: [AuthActivate], data: {title: 'Logout', loginRequired: true}},
+    {path: 'profile', component: ProfileComponent, canActivate: [AuthActivate], data: {title: 'Profile', loginRequired: true}}
 ];
 
 

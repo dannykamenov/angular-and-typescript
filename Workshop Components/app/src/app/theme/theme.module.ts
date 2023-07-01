@@ -8,6 +8,9 @@ import { ThemeDetailsComponent } from './theme-details/theme-details.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component';
+import { HomeComponent } from '../core/home/home.component';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -17,13 +20,14 @@ import { FormsModule } from '@angular/forms';
     NewThemeComponent,
     ThemeDetailsComponent,
     RecentPostsComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     ThemeRoutingModule,
-    RouterModule,
     FormsModule,
+    CoreModule
   ], exports: [
     ThemeListComponent,
     RecentPostsComponent,
