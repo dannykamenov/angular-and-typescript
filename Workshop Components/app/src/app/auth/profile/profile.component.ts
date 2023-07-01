@@ -71,9 +71,8 @@ get addresssesArray() {
     this.formSubmitted = true;
     /* if (this.form.invalid) { return; } */
     const { username, email, ext, tel } = this.form.value;
-    this.authService.user = {
-      username, email, tel: ext + ' ' + tel
-    } as any;
-    this.toggleEditMode();
+    this.authService.setProfile(username, email, ext + ' ' + tel).subscribe(() => {
+      this.toggleEditMode();
+    });
   }
 }
