@@ -1,6 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, take } from 'rxjs';
+import { BehaviorSubject, debounceTime, filter, take } from 'rxjs';
 import { API_ERROR } from 'src/app/shared/constants';
 
 @Component({
@@ -8,14 +8,18 @@ import { API_ERROR } from 'src/app/shared/constants';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })
-export class ErrorComponent {
+export class ErrorComponent implements OnDestroy{
 
   apiError$ = this.apiError.asObservable();
 
   constructor(@Inject(API_ERROR) private apiError: BehaviorSubject<Error | null>, private router: Router) { 
-    this.apiError$.pipe(take(1)).subscribe(() => {
+    this.apiError$.pipe(debounceTime(0), take(1), filter(val => !val)).subscribe(() => {
       this.router.navigate(['/']);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.apiError.next(null);
   }
 
 }
