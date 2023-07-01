@@ -4,6 +4,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { AppEmailDirective } from './validators/app-email.directive';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
+import { DateTransformPipe } from './pipes/date-transform.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
     LoaderComponent,
     AppEmailDirective,
     ShortenPipe,
-    ElapsedTimePipe
+    ElapsedTimePipe,
+    DateTransformPipe
   ],
   imports: [
     CommonModule
@@ -20,7 +22,9 @@ import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
   exports: [
     LoaderComponent,
     AppEmailDirective,
-    ShortenPipe
+    ShortenPipe,
+    ElapsedTimePipe,
+    DateTransformPipe
   ]
 })
 export class SharedModule { }

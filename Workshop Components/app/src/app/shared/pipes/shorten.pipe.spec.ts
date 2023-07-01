@@ -1,4 +1,4 @@
-import { ShortenPipe } from './pipes/shorten.pipe';
+import { ShortenPipe } from './shorten.pipe';
 
 describe('ShortenPipe', () => {
   it('create an instance', () => {
